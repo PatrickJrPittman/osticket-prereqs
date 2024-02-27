@@ -33,9 +33,9 @@ This tutorial outlines how I installed OsTicket.<br />
 <h2>Installation Steps</h2>
 
 
-1.) The first thing you are going to want to do is create a virtual machine by going to https://portal.azure.com/. Setup your virtual machine with Windows 10 Pro, version 22H2.You will want to create a virtual machine with atleast 2 vcpus and 16 gbs of memory.
+ The first thing you are going to want to do is create a virtual machine by going to https://portal.azure.com/. Setup your virtual machine with Windows 10 Pro, version 22H2.You will want to create a virtual machine with atleast 2 vcpus and 16 gbs of memory.
 
-2.) Once you have created your virtual machine you will want to conncet to it by using the public ip address the vm is setup with. You will connect using the remote desktop connection app. 
+ Once you have created your virtual machine you will want to conncet to it by using the public ip address the vm is setup with. You will connect using the remote desktop connection app. 
 </p>
 <br />
 
@@ -48,7 +48,7 @@ This tutorial outlines how I installed OsTicket.<br />
 </p>
 <p>
   
-3.) Once you have connected to your virtual machine you will want to go to your control panel. From the control panel open up programs. Select, Turn Windows features on and off.
+ Once you have connected to your virtual machine you will want to go to your control panel. From the control panel open up programs. Select, Turn Windows features on and off.
 
 <p>
 <img src="https://imgur.com/fGXMpx4.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -60,7 +60,7 @@ This tutorial outlines how I installed OsTicket.<br />
 </p>
 <p>
   
-4.) You will want to install / enable IIS in Windows with CGI and Common HTTP Features
+ You will want to install / enable IIS in Windows with CGI and Common HTTP Features
 
 [X] CGI
 [X] Common HTTP Features
@@ -88,31 +88,16 @@ This tutorial outlines how I installed OsTicket.<br />
   
   
   
-5.) Now that the IIS is enabled, From the Installation Files, download and install PHP Manager for IIS (PHPManagerForIIS_V1.5.0.msi)
+ Now that the IIS is enabled, From the Installation Files, download and install PHP Manager for IIS (PHPManagerForIIS_V1.5.0.msi)
   Go through the install wizard and complete the install.
   
-6.) Next from the Installation Files, download and install the Rewrite Module (rewrite_amd64_en-US.msi)
+ Next from the Installation Files, download and install the Rewrite Module (rewrite_amd64_en-US.msi)
   
-7.) Create a folder in the C drive called PHP.
-  
-8.) From the Installation Files, download PHP 7.3.8 (php-7.3.88-nts-Win32-VC15-x866.zip) and unzip the contents into C:\PHP
-  
-  !! ATTENTION !!
-If this appears, choose to “Keep” the file:
-  
-<p>
-<img src="https://imgur.com/xZv1Yhw.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-  
-<p>
-<img src="https://imgur.com/YwBhqo0.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
+ Create a folder in the C drive called PHP.
 
-9.) Once you have downloaded and extracted the zip file into the PHP folder on the C drive, download and install the VC_redist.x86.exe from the installation files. Go through the setup wizard to finish setting up and installing the VC_redist.x86.exe. 
+ Once you have downloaded and extracted the zip file into the PHP folder on the C drive, download and install the VC_redist.x86.exe from the installation files. Go through the setup wizard to finish setting up and installing the VC_redist.x86.exe. 
   
-10.) Download and install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
+ Download and install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
   Run the setup wizard:
 Typical Setup ->
 Launch Configuration Wizard (after install) ->
@@ -132,7 +117,7 @@ Standard Configuration ->
 </p>
 <p>
   
-11.) Now that we have the files downloaded and installed we will want to search for IIS in the windows search bar. Open IIS as an administrator.
+ Now that we have the files downloaded and installed we will want to search for IIS in the windows search bar. Open IIS as an administrator.
   The program should look like this.
   
 <p>
@@ -140,7 +125,7 @@ Standard Configuration ->
 </p>
 <p>
   
-12.) We will now want to register PHP from within IIS.
+ We will now want to register PHP from within IIS.
   Click on PHP Manager
   
 <p>
@@ -170,14 +155,14 @@ You will want to provide a path to the php executable file (php-cgi.exe)).
 </p>
 <p>
   
-13.) Install osTicket v1.15.8
+ Install osTicket v1.15.8
   -Download osTicket from the Installation Files Folder
   -Extract and copy "upload" folder to c:\inetpub\wwwroot
   -Within c:\inetpub\root, Rename "upload" to "osTicket"
   
   Reload IIS again.
   
-14.) On IIS go to sites -> Default -> osTicket
+ On IIS go to sites -> Default -> osTicket
   -On the right, click “Browse *:80”
   
 <p>
@@ -209,11 +194,11 @@ You will want to provide a path to the php executable file (php-cgi.exe)).
   
   We will want to enable three extensions from here.
   
-  1.) php_imap.dll
+  1.  php_imap.dll
  
-  2.) php_intl.dll
+  2. php_intl.dll
   
-  3.) php_opcache.dll
+  3. php_opcache.dll
   
 <p>
 <img src="https://imgur.com/cOem7Nb.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -221,7 +206,7 @@ You will want to provide a path to the php executable file (php-cgi.exe)).
 <p>
   
   
-15.) Once we have those extensions enabled in IIS, we are going to want to rename one of the files in our osTicket folder.
+ Once we have those extensions enabled in IIS, we are going to want to rename one of the files in our osTicket folder.
   Go into the file explorer and search for C;\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
   
   We are going to rename the ost-sampleconfig.php to ost-config.php
