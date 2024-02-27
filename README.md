@@ -61,7 +61,7 @@ This tutorial outlines how I installed OsTicket.<br />
 <p>
   
 4.) You will want to install / enable IIS in Windows with CGI and Common HTTP Features
-  - World Wide Web Services -> Application Development Features -> 
+
 [X] CGI
 [X] Common HTTP Features
   
